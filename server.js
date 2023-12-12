@@ -247,7 +247,8 @@ app.post('/signupUser', (req, res) => {
         const totalIncome = results[0].totalIncome;
         const totalExpenses = results[0].totalExpenses;
   
-        res.status(200).json({ success: true, totalIncome, totalExpenses });
+        res.status(200).json(
+          { success: true, totalIncome, totalExpenses });
       });
     });
   });
@@ -352,7 +353,7 @@ app.post('/signupUser', (req, res) => {
   
   app.get('/BudgetTranshistory/:userId', (req, res) => {
     const userId = req.params.userId;
-    const query = 'SELECT * FROM BudgetTrans WHERE UserID = ? ORDER BY InsertionDateTime';
+    const query = 'SELECT * FROM budgettrans WHERE UserID = ? ORDER BY InsertionDateTime';
   
     // Get a connection from the pool
     pool.getConnection((err, connection) => {
