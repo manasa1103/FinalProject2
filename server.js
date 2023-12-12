@@ -30,7 +30,6 @@ const pool = mysql.createPool({
   password: 'AVNS_iF1EHMF_V7bp8qOTY0X',
   database: 'defaultdb',
   port: 25060,
-  ssl: 'REQUIRED',
 });
 
 
