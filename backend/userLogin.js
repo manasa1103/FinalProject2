@@ -186,7 +186,7 @@ async function registerNewUser() {
     };
 
     try {
-        const response = await fetch('http://localhost:3000/signupUser', {
+        const response = await fetch('http://159.203.161.159:3000/signupUser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -213,7 +213,7 @@ async function addUserToSession(userID) {
     const data = { UserID: userID };
 
     try {
-        const response = await fetch('http://localhost:3000/addToUserSessions', {
+        const response = await fetch('http://159.203.161.159:3000/addToUserSessions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -248,7 +248,7 @@ async function performUserLogin() {
     };
 
     try {
-        const response = await fetch('http://localhost:3000/loginuser', {
+        const response = await fetch('http://159.203.161.159:3000/loginuser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

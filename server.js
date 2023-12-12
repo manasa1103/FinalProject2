@@ -26,7 +26,7 @@ app.use(express.static(__dirname));
 app.use(bodyParser.text());
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on http://159.203.161.159:${port}`);
 });
 
 // Serve main HTML page
@@ -36,9 +36,9 @@ app.get('/', (req, res) => {
 
 // Enter your database credentials 
 const pool = mysql.createPool({
-  host: 'localhost',  
-  user: 'root',
-  password: '1234',
+  host: 'sql3.freemysqlhosting.net',  
+  user: 'sql3669667',
+  password: '2SAFldAd5x',
   database: 'project',
   port: 3306,
 });
