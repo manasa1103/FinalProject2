@@ -390,7 +390,7 @@ app.post('/signupUser', (req, res) => {
         return;
       }
   
-      connection.query('DELETE FROM Sessions WHERE UserID = ?', [userId], (err, result) => {
+      connection.query('DELETE FROM sessions WHERE UserID = ?', [userId], (err, result) => {
         connection.release(); // Release the connection back to the pool
   
         if (err) {
