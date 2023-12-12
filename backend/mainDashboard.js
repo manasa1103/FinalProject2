@@ -5,7 +5,7 @@ let currSessionID = 0;
 
 async function getCurrentUserLoginID() {
     try {
-        const response = await fetch('http://localhost:3000/api/currentUserLoginID');
+        const response = await fetch('http://159.203.161.159:3000/api/currentUserLoginID');
 
         // Log the entire response
         console.log(response);

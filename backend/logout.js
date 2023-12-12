@@ -8,7 +8,7 @@ function logout(){
 
 
  function removeSession(userId) {
-    fetch('http://localhost:3000/remove-session', {
+    fetch('http://159.203.161.159:3000/remove-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ if (parent && parent.location) {
 
 async function getCurrentUserLoginID() {
     try {
-        const response = await fetch('http://localhost:3000/api/currentUserLoginID');
+        const response = await fetch('http://159.203.161.159:3000/api/currentUserLoginID');
 
         // Log the entire response
         console.log(response);
