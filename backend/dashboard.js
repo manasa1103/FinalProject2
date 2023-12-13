@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
 async function getMonthlyIncomeAndExpenses(userId) {
   try {
     // Send a GET request to the server to get total income and expenses for the present month and last month
-    const response = await fetch(`/getMonthlyIncomeAndExpenses/${userId}`);
+    const response = await fetch(`http://159.203.161.159:3000/getMonthlyIncomeAndExpenses/${userId}`);
     
     // Check if the request was successful
     if (response.ok) {
