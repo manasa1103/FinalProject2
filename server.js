@@ -229,19 +229,18 @@ app.post('/signupUser', (req, res) => {
       }
   
       // Replace the following lines with your actual database logic
-      const getMonthlyDataQuery = 'SELECT COALESCE(SUM(CASE WHEN TransStatus = "income" THEN Amount ELSE 0 END), 0) AS totalIncome, COALESCE(SUM(CASE WHEN TransStatus = "expense" THEN Amount ELSE 0 END), 0) AS totalExpenses FROM budgettrans WHERE UserID = ? AND MONTH(TransDate) = ? AND YEAR(TransDate) = ?';
+  const getMonthlyDataQuery = 'SELECT COALESCE(SUM(CASE WHEN TransStatus = "income" THEN Amount ELSE 0 END), 0) AS totalIncome, COALESCE(SUM(CASE WHEN TransStatus = "expense" THEN Amount ELSE 0 END), 0) AS totalExpenses FROM budgettrans WHERE UserID = ? AND MONTH(TransDate) = ? AND YEAR(TransDate) = ?';
   
-      // Execute the query
-      connection.query(getMonthlyDataQuery, [userId, month, year], (error, results) => {
-        // Release the connection back to the pool
-        connection.release();
-  
-        if (error) {
-          console.error('Error executing query:', error);
-          res.status(500).json({ success: false, error: 'Internal server error' });
-          return;
-        }
-  
+  // Execute the query
+  connection.query(getMonthlyDataQuery, [userId, month, year], (error, results) => {
+    // Release the connection back to the pool
+    connection.release();
+
+    if (error) {
+      console.error('Error executing query:', error);
+      res.status(500).json({ success: false, error: 'Internal server error' });
+      return;
+    }
         const totalIncome = results[0].totalIncome;
         const totalExpenses = results[0].totalExpenses;
   
