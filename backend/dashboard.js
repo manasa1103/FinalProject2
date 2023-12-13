@@ -164,7 +164,7 @@ async function getMonthlyIncomeAndExpenses(userId) {
 async function getMonthlyYearlyIncomeAndExpenses(userId, month, year) {
   try {
     // Send a GET request to the server to get total income and expenses for the given month and year
-    const response = await fetch('/getMonthlyIncomeAndExpenses', {
+    const response = await fetch('http://159.203.161.159:3000/getMonthlyIncomeAndExpenses', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
