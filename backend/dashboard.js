@@ -165,7 +165,7 @@ async function getMonthlyYearlyIncomeAndExpenses(userId, month, year) {
   try {
     // Send a GET request to the server to get total income and expenses for the given month and year
     const response = await fetch('/getMonthlyIncomeAndExpenses', {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
