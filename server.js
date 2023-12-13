@@ -217,10 +217,8 @@ app.post('/signupUser', (req, res) => {
   
   
   // GET endpoint to get total income and expenses for a given month and year for a given UserID
-  app.get('/getMonthlyIncomeAndExpenses/:userId/:month/:year', (req, res) => {
-    const userId = req.params.userId;
-    const month = req.params.month;
-    const year = req.params.year;
+  app.get('/getMonthlyIncomeAndExpenses', (req, res) => {
+    const { userId, month, year } = req.body;
   
     // Acquire a connection from the pool
     pool.getConnection((err, connection) => {
@@ -499,3 +497,5 @@ app.post('/signupUser', (req, res) => {
       );
     });
   });
+
+  module.exports = app;
